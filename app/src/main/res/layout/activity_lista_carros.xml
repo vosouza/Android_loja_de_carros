@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".Lista_carros_activity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_car_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_list"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
