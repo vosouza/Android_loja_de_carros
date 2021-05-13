@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="16dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        app:cardCornerRadius="4dp">
 
     <LinearLayout
         android:id="@+id/item_card_layout"
@@ -19,7 +20,7 @@
             android:id="@+id/item_card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fiat Uno"
+            android:text="Nome do Carro"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textColor="@color/black"/>
@@ -28,31 +29,30 @@
             android:id="@+id/item_card_image"
             android:layout_width="match_parent"
             android:layout_height="194dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/Uno" />
+            android:src="@drawable/uno"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/item_card_desc1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ano 1997"
+            android:text="Tipo do carro: passeio"
             android:textSize="14sp"
             android:textColor="@color/black"/>
         <TextView
             android:id="@+id/item_card_desc2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cor Vermelha, 2 Portas, Gasolina"
+            android:text="Descrição do carro"
             android:textSize="14sp"
             android:textColor="@color/black"/>
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/item_card_button_ver_mais"
-            style="?attr/borderlessButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="ver mais" />
+            android:layout_height="wrap_content"
+            android:text="ver mais"
+            style="?attr/borderlessButtonStyle"
+            android:layout_gravity="center"/>
     </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
