@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/card_image_exemple" />
+            android:src="@drawable/Uno" />
 
         <TextView
             android:id="@+id/item_card_desc1"

@@ -29,15 +29,30 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
     private fun loadData() {
 
-        Car("Fiat Uno", R.mipmap.card_image_exemple, "Carro de passeio", "Texto grande").apply {
+        Car("Fiat Uno", R.drawable.Uno, "Carro de passeio", "Texto grande").apply {
             listaDeCarros.add(this)
         }
-        Car("Fiat Bruno", R.mipmap.card_image_exemple, "Carro de corrida", "Texto grande mesmo").apply {
+        Car("Volkswagen Gol", R.drawable.Gol, "Carro de corrida", "Texto grande mesmo").apply {
             listaDeCarros.add(this)
         }
-        Car("Fiat Uno", R.mipmap.card_image_exemple, "Carro de passeio", "Texto grande").apply {
+        Car("Fiat Argo", R.drawable.Argo, "Carro de passeio", "Texto grande").apply {
             listaDeCarros.add(this)
         }
+        Car("Toyota Corolla", R.drawable.Corolla, "Carro de passeio", "Texto grande").apply {
+            listaDeCarros.add(this)
+        }
+        Car("Hyundai HB20", R.drawable.HB20, "Carro de passeio", "Texto grande").apply {
+            listaDeCarros.add(this)
+        }
+        Car("Chevrolet Prisma", R.drawable.Prisma, "Carro de passeio", "Texto grande").apply {
+            listaDeCarros.add(this)
+        }
+        Car("Jeep Renegade", R.drawable.Renegade, "Carro de passeio", "Texto grande").apply {
+            listaDeCarros.add(this)
+        }
+
+
+
     }
 
     private fun loadComponents() {
