@@ -1,12 +1,15 @@
 package com.brq.applojadecarros
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.brq.applojadecarros.model.Car
+import com.brq.applojadecarros.model.ItemClickListener
 
-class Lista_carros_activity : AppCompatActivity() {
+class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
     var listaDeCarros: ArrayList<Car> = ArrayList<Car>()
     lateinit var recyclerView: RecyclerView
@@ -18,7 +21,7 @@ class Lista_carros_activity : AppCompatActivity() {
         loadComponents()
         loadData()
 
-        CarListAdapter(this, listaDeCarros).let{
+        CarListAdapter(this, listaDeCarros,this).let{
             recyclerView.adapter = it
         }
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -29,10 +32,24 @@ class Lista_carros_activity : AppCompatActivity() {
         Car("Fiat Uno", R.mipmap.card_image_exemple, "Carro de passeio", "Texto grande").apply {
             listaDeCarros.add(this)
         }
+        Car("Fiat Bruno", R.mipmap.card_image_exemple, "Carro de corrida", "Texto grande mesmo").apply {
+            listaDeCarros.add(this)
+        }
+        Car("Fiat Uno", R.mipmap.card_image_exemple, "Carro de passeio", "Texto grande").apply {
+            listaDeCarros.add(this)
+        }
     }
 
     private fun loadComponents() {
         recyclerView = findViewById(R.id.rv_car_list)
+    }
+
+    override fun onClickItem(view: View?, index: Int) {
+        startActivity(Intent(this, Filtro_Activity::class.java))
+    }
+
+    override fun onLongCLickItem(view: View?, index: Int) {
+        TODO("Not yet implemented")
     }
 
 }

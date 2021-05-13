@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppLojaDeCarros">
         <activity android:name=".Lista_carros_activity"></activity>
+        <activity android:name=".Filtro_Activity"></activity>
+        <activity android:name=".Detalhes_Activity"></activity>
         <activity android:name=".login_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
