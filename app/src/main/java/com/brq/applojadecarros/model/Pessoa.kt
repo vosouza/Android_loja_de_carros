@@ -9,10 +9,18 @@ class Pessoa (
 {
 
     companion object{
-        fun getPessoasList(): ArrayList<Pessoa>{
-            val list = ArrayList<Pessoa>()
-            list.add(Pessoa("James", 25, "james@gmail.com","senha1"))
-            return list
+        fun email():String {return "james@hotmail.com"
+
         }
+        fun senha():String{return "abc1234"
+
+        }
+        fun nome():String {return "James"
+
+        }
+        fun idade():String {
+            return "45"
+        }
+
     }
 }
