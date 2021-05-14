@@ -1,9 +1,10 @@
-package com.brq.applojadecarros
+package com.brq.applojadecarros.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.brq.applojadecarros.R
 
 class login_Activity : AppCompatActivity() {
 

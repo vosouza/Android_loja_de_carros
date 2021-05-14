@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lista_carros_activity">
+    tools:context=".activity.Lista_carros_activity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_car_list"

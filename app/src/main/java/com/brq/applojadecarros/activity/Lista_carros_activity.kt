@@ -1,4 +1,4 @@
-package com.brq.applojadecarros
+package com.brq.applojadecarros.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.brq.applojadecarros.CarListAdapter
+import com.brq.applojadecarros.R
 import com.brq.applojadecarros.model.Car
 import com.brq.applojadecarros.model.ItemClickListener
 
@@ -58,7 +60,7 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
     }
 
     override fun onClickItem(view: View?, index: Int) {
-        startActivity(Intent(this, Filtro_Activity::class.java))
+        startActivity(Intent(this, Detalhes_Activity::class.java))
     }
 
     override fun onLongCLickItem(view: View?, index: Int) {

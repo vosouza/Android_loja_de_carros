@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppLojaDeCarros">
-        <activity android:name=".Lista_carros_activity"></activity>
-        <activity android:name=".Filtro_Activity"></activity>
-        <activity android:name=".Detalhes_Activity"></activity>
-        <activity android:name=".login_Activity">
+        <activity android:name=".activity.Lista_carros_activity"></activity>
+        <activity android:name=".activity.Filtro_Activity"></activity>
+        <activity android:name=".activity.Detalhes_Activity"></activity>
+        <activity android:name=".activity.login_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
