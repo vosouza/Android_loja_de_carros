@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/argo" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_descricao1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="TextView"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@+id/imagem_car" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txt_descricao2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -46,7 +46,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/txt_Preco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btn_Pedir_Orcamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -79,7 +79,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_Preco"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
