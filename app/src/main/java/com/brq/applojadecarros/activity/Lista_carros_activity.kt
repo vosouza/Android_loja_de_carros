@@ -38,7 +38,10 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
     }
 
     override fun onClickItem(view: View?, index: Int) {
-        startActivity(Intent(this, Detalhes_Activity::class.java))
+        Intent(this, Detalhes_Activity::class.java).apply {
+            putExtra("CarId",index)
+            startActivity(this)
+        }
     }
 
     override fun onLongCLickItem(view: View?, index: Int) {
