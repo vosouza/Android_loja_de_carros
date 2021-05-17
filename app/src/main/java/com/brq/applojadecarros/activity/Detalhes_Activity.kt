@@ -45,7 +45,7 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
     private fun loadContent() {
         txtNome.text = carro.nomeCarro
         imgCarro.setImageResource(carro.Image)
-        txtDescricao1.text = carro.tipoCarro
+        txtDescricao1.text = resources.getString(R.string.carro1_desc1)
         txtDescricao2.text = carro.descricao
         txtPreco.text = "Ainda nao implementado"
     }
