@@ -22,7 +22,7 @@
             android:text="Fiat Uno"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:textColor="@color/black"/>
+            android:textColor="#0037FF"/>
 
         <ImageView
             android:id="@+id/item_card_image"
@@ -37,14 +37,14 @@
             android:layout_height="wrap_content"
             android:text="Ano 1997"
             android:textSize="14sp"
-            android:textColor="@color/black"/>
+            android:textColor="#0037FF"/>
         <TextView
             android:id="@+id/item_card_desc2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cor Vermelha, 2 Portas, Gasolina"
             android:textSize="14sp"
-            android:textColor="@color/black"/>
+            android:textColor="#0037FF"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/item_card_button_ver_mais"
@@ -52,7 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:text="ver mais" />
+            android:text="ver mais"
+            android:textColor="#5B6C5D" />
     </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
