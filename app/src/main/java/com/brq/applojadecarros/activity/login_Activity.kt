@@ -3,11 +3,18 @@ package com.brq.applojadecarros.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.net.toUri
 import com.brq.applojadecarros.R
 import com.brq.applojadecarros.model.Pessoa
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.io.File
 
 class login_Activity : AppCompatActivity() {
 
@@ -15,48 +22,38 @@ class login_Activity : AppCompatActivity() {
     lateinit var email : TextView
     lateinit var senha : TextView
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        auth = FirebaseAuth.getInstance()
+
         loadComponents()
 
         btnLogin.setOnClickListener () {
-            var email = email (email = email.text.toString ())
-
-            var senha = senha (senha = senha.text.toString ())
-
-            if (email && senha) {
-                startActivity ( Intent ( this , Lista_carros_activity :: class .java))
-            }
-            else {
-                Toast.makeText(this, "E-mail ou senha incorretos", Toast.LENGTH_SHORT).show()
-            }
+            signIN(email.text.toString(),senha.text.toString())
         }
 
     }
 
-    private fun senha(senha: String): Boolean {
-        var s = Pessoa.senha()
-        if(senha.equals(s)){
-
-            return true
-
-        }else{
-            return false
-
-        }
-
+    private fun signIN(email: String,senha: String){
+        auth.signInWithEmailAndPassword(email,senha)
+            .addOnCompleteListener {
+                if(it.isSuccessful){
+                    val user = auth.currentUser
+                    logadoComSucesso()
+                }else{
+                    Toast.makeText(baseContext, "Falha ao Logar.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
-    private fun email(email: String): Boolean {
-        var e = Pessoa.email()
-        if (email.equals(e)){
-
-            return true
-        }else{
-            return false
-
+    private fun logadoComSucesso() {
+        Intent(this, Lista_carros_activity::class.java).apply {
+            startActivity(this)
         }
     }
 

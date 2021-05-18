@@ -1,20 +1,27 @@
 package com.brq.applojadecarros.activity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.brq.applojadecarros.CarListAdapter
 import com.brq.applojadecarros.R
 import com.brq.applojadecarros.model.Car
 import com.brq.applojadecarros.model.ItemClickListener
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.io.File
 
 class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
     var listaDeCarros: ArrayList<Car> = ArrayList<Car>()
     lateinit var recyclerView: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +37,28 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
     }
 
     private fun loadData() {
-        listaDeCarros = Car.getCarList()
+        val db = Firebase.firestore
+        db.collection("Carros")
+            .get()
+            .addOnSuccessListener {
+                for(document in it ){
+                    Log.d("teste",document.get("Tipo").toString())
+
+                    val carro = Car(
+                        document.get("NomeCarro").toString(),
+                        document.get("ImagemURL").toString(),
+                        document.get("Tipo").toString(),
+                        document.get("Descricao").toString()
+                    )
+                    listaDeCarros.add(carro)
+                }
+                recyclerView.adapter?.notifyDataSetChanged()
+                Log.d("teste",listaDeCarros.size.toString())
+            }
+            .addOnFailureListener{
+                Log.d("FireBase", "DocumentSnapshot failure with ID: $it")
+            }
+        Car.listaDeCarros = this.listaDeCarros
     }
 
     private fun loadComponents() {

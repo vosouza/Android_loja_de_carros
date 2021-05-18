@@ -4,9 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Adapter
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.brq.applojadecarros.model.Car
 import com.brq.applojadecarros.model.ItemClickListener
+import com.bumptech.glide.Glide
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.io.File
 
 class CarListAdapter(
     val context: Context,
@@ -25,7 +30,9 @@ class CarListAdapter(
             holder.txtNome.text = it.nomeCarro
             holder.txtDescricaoTipo.text = it.tipoCarro
             holder.txtDescricao.text = it.descricao
-            holder.srcImagem.setImageResource(it.Image)
+
+            //holder.srcImagem.setImageURI(it.Image)
+            Glide.with(context).load(it.Image).into(holder.srcImagem)
         }
     }
 

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.brq.applojadecarros.R
 import com.brq.applojadecarros.model.Car
 import com.brq.applojadecarros.model.ItemClickListener
+import com.bumptech.glide.Glide
 
 class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
 
@@ -29,7 +30,7 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
 
         loadComponents()
 
-        val listaCarros = Car.getCarList()
+        val listaCarros = Car.listaDeCarros
         val intent = intent
         val carId = intent.getIntExtra("CarId", -1)
 
@@ -44,10 +45,10 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
 
     private fun loadContent() {
         txtNome.text = carro.nomeCarro
-        imgCarro.setImageResource(carro.Image)
+        Glide.with(this).load(carro.Image).into(imgCarro)
         txtDescricao1.text = resources.getString(R.string.carro1_desc1)
         txtDescricao2.text = carro.descricao
-        txtPreco.text = "Ainda nao implementado"
+        txtPreco.text = ""
     }
 
     fun loadComponents(){

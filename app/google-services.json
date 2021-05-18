@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "788069613604",
+    "firebase_url": "https://applojas.firebaseio.com",
+    "project_id": "applojas",
+    "storage_bucket": "applojas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788069613604:android:53cf326b5dbcbc089ed8b1",
+        "android_client_info": {
+          "package_name": "com.brq.applojadecarros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788069613604-8p3q0vf102mtpp80fjev5js9qlfmk6mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8T7rCNOMKoVaeyJLPm4ibbeVIpXf8d8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788069613604-8p3q0vf102mtpp80fjev5js9qlfmk6mh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
