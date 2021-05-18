@@ -8,17 +8,19 @@
 
     <TextView
         android:id="@+id/txt_nome_veiculo"
-        android:layout_width="384dp"
-        android:layout_height="19dp"
+        android:layout_width="371dp"
+        android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:background="#184DF8"
+        android:background="#184FD8"
         android:fontFamily="sans-serif-black"
         android:text="FIAT ARGO"
         android:textAlignment="center"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/imagem_car"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +28,7 @@
         android:id="@+id/imagem_car"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:layout_weight="1"
         app:layout_constraintStart_toStartOf="@+id/txt_nome_veiculo"
         app:layout_constraintTop_toBottomOf="@+id/txt_nome_veiculo"
@@ -37,28 +39,28 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/white"
-        android:textColor="#0037FF"
         android:padding="8dp"
         android:text="@string/carro1_desc1"
+        android:textColor="#0037FF"
         app:layout_constraintBottom_toBottomOf="@+id/imagem_car"
         app:layout_constraintEnd_toEndOf="@+id/txt_nome_veiculo"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imagem_car"
-        app:layout_constraintTop_toTopOf="@+id/imagem_car" />
+        app:layout_constraintTop_toTopOf="@+id/imagem_car"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txt_descricao2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="376dp"
+        android:layout_height="142dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/white"
+        android:text="Motor 3 cilindros"
         android:textColor="#0037FF"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/txt_Preco"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagem_car" />
 
@@ -74,21 +76,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txt_Preco"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="136dp"
-        android:textColor="#0037FF"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button6"
