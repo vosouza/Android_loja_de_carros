@@ -27,7 +27,7 @@ class login_Activity : AppCompatActivity() {
             var senha = senha (senha = senha.text.toString ())
 
             if (email && senha) {
-                startActivity ( Intent ( this , Lista_carros_activity :: class .java))
+                startActivity ( Intent ( this , lista_carros_activity :: class .java))
             }
             else {
                 Toast.makeText(this, "E-mail ou senha incorretos", Toast.LENGTH_SHORT).show()
