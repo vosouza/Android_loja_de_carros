@@ -3,15 +3,10 @@ package com.brq.applojadecarros
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Adapter
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.brq.applojadecarros.model.Car
 import com.brq.applojadecarros.model.ItemClickListener
 import com.bumptech.glide.Glide
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import java.io.File
 
 class CarListAdapter(
     val context: Context,

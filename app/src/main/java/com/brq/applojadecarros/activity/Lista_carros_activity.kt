@@ -1,12 +1,10 @@
 package com.brq.applojadecarros.activity
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.brq.applojadecarros.CarListAdapter
@@ -15,12 +13,11 @@ import com.brq.applojadecarros.model.Car
 import com.brq.applojadecarros.model.ItemClickListener
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.io.File
 
 class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
-    var listaDeCarros: ArrayList<Car> = ArrayList<Car>()
-    lateinit var recyclerView: RecyclerView
+    private var listaDeCarros: ArrayList<Car> = ArrayList()
+    private lateinit var recyclerView: RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

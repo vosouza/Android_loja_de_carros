@@ -3,24 +3,17 @@ package com.brq.applojadecarros.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.net.toUri
 import com.brq.applojadecarros.R
-import com.brq.applojadecarros.model.Pessoa
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import java.io.File
 
 class login_Activity : AppCompatActivity() {
 
-    lateinit var btnLogin: Button
-    lateinit var email : TextView
-    lateinit var senha : TextView
+    private lateinit var btnLogin: Button
+    private lateinit var email : TextView
+    private lateinit var senha : TextView
 
     private lateinit var auth: FirebaseAuth
 
@@ -32,7 +25,7 @@ class login_Activity : AppCompatActivity() {
 
         loadComponents()
 
-        btnLogin.setOnClickListener () {
+        btnLogin.setOnClickListener {
             signIN(email.text.toString(),senha.text.toString())
         }
 
@@ -42,7 +35,7 @@ class login_Activity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email,senha)
             .addOnCompleteListener {
                 if(it.isSuccessful){
-                    val user = auth.currentUser
+                    //val user = auth.currentUser
                     logadoComSucesso()
                 }else{
                     Toast.makeText(baseContext, "Falha ao Logar.",
