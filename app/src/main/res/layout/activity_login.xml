@@ -53,6 +53,7 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
         android:hint="Senha:"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/botao"
