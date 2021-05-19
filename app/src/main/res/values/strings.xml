@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AppLojaDeCarros</string>
+    <string name="corpo_email">
+        Olá!
+        Gostaria de solicitar um orçamento para um de seus produtos.
+        Fico no aguardo para resposta.
+    </string>
 </resources>
