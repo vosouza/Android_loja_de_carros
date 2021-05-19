@@ -40,7 +40,6 @@
         android:layout_height="0dp"
         android:background="@color/white"
         android:padding="8dp"
-        android:text="@string/carro1_desc1"
         android:textColor="#0037FF"
         app:layout_constraintBottom_toBottomOf="@+id/imagem_car"
         app:layout_constraintEnd_toEndOf="@+id/txt_nome_veiculo"
@@ -65,38 +64,30 @@
         app:layout_constraintTop_toBottomOf="@+id/imagem_car" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:id="@+id/btn_Pedir_Orcamento"
+            android:layout_width="182dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@drawable/botao_customizado"
+            android:text="Enviar Proposta"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="182dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/botao_customizado"
+            android:text="Voltar"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="182dp"
-        android:layout_height="40dp"
-        android:layout_weight="1"
-        android:background="@drawable/botao_customizado"
-        android:text="Voltar"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="540dp" />
-
-    <Button
-        android:id="@+id/btn_Pedir_Orcamento"
-        android:layout_width="182dp"
-        android:layout_height="42dp"
-        android:layout_weight="1"
-        android:background="@drawable/botao_customizado"
-        android:text="Enviar Proposta"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="540dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

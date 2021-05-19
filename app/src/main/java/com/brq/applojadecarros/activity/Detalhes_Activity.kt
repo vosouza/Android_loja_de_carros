@@ -19,7 +19,6 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
     lateinit var imgCarro: ImageView
     lateinit var txtDescricao1: TextView
     lateinit var txtDescricao2: TextView
-    lateinit var txtPreco: TextView
     lateinit var btnOrcamento: Button
 
     private lateinit var carro : Car
@@ -48,7 +47,6 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
         Glide.with(this).load(carro.Image).into(imgCarro)
         txtDescricao1.text = resources.getString(R.string.carro1_desc1)
         txtDescricao2.text = carro.descricao
-        txtPreco.text = ""
     }
 
     fun loadComponents(){
@@ -56,7 +54,6 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
         imgCarro = findViewById<ImageView>(R.id.imagem_car)
         txtDescricao1 = findViewById<TextView>(R.id.txt_descricao1)
         txtDescricao2 = findViewById<TextView>(R.id.txt_descricao2)
-        txtPreco = findViewById<TextView>(R.id.txt_Preco)
         btnOrcamento = findViewById<Button>(R.id.btn_Pedir_Orcamento)
     }
 
