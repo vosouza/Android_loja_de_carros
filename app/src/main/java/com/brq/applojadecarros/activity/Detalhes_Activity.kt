@@ -1,7 +1,7 @@
 package com.brq.applojadecarros.activity
 
-import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -72,18 +72,13 @@ class Detalhes_Activity : AppCompatActivity(){
         }
 
         btnOrcamento.setOnClickListener {
-            var texto: String = getString(R.string.corpo_email)
-            texto += "\nCarro: ${carro.nomeCarro}"
+            val intent = Intent(Intent.ACTION_SENDTO)
+            intent.data = Uri.parse("mailto:" + "james@hotmail.com")
 
-            val intent = Intent().apply {
-                action = Intent.CATEGORY_APP_EMAIL
-                putExtra(Intent.EXTRA_TEXT,texto)
-                type = "text/plain"
-            }
-            try{
+            //intent.putExtra(Intent.EXTRA_EMAIL, "cpudvini@gmail.com")
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Pedido de orçamento")
+            if (intent.resolveActivity(packageManager) != null) {
                 startActivity(intent)
-            }catch (e: ActivityNotFoundException){
-
             }
         }
     }

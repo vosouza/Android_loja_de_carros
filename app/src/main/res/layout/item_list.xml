@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -7,21 +8,21 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/item_card_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/botao_customizado">
 
         <ImageView
             android:id="@+id/item_card_image"
             android:layout_width="match_parent"
-            android:layout_height="194dp"
+            android:layout_height="192dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/argo" />
+            android:src="@drawable/argo"/>
 
         <TextView
             android:id="@+id/item_card_name"
@@ -29,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Fiat Uno"
             android:textAlignment="center"
-            android:textColor="#0037FF"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
         <TextView
@@ -38,8 +39,8 @@
             android:layout_height="wrap_content"
             android:paddingStart="6dp"
             android:text="Ano 1997"
-            android:textColor="#0037FF"
-            android:textSize="14sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/item_card_desc2"
@@ -47,8 +48,15 @@
             android:layout_height="wrap_content"
             android:paddingStart="6dp"
             android:text="Cor Vermelha, 2 Portas, Gasolina"
-            android:textColor="#0037FF"
-            android:textSize="14sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="1dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/item_card_button_ver_mais"
@@ -57,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:text="ver mais"
-            android:textColor="#5B6C5D" />
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

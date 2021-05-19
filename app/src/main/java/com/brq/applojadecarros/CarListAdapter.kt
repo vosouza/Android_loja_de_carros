@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 
 class CarListAdapter(
     val context: Context,
-    private val listaDeCarros: ArrayList<Car>,
+    private var listaDeCarros: ArrayList<Car>,
     private val onClick: ItemClickListener? = null
 ): RecyclerView.Adapter<CarListViewHolder>() {
 
@@ -33,5 +33,10 @@ class CarListAdapter(
 
     override fun getItemCount(): Int {
         return listaDeCarros.size
+    }
+
+    fun atualizarLista(array: ArrayList<Car>){
+        listaDeCarros = array
+        notifyDataSetChanged()
     }
 }

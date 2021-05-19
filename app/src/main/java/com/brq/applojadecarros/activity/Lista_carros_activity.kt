@@ -1,10 +1,13 @@
 package com.brq.applojadecarros.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.brq.applojadecarros.CarListAdapter
@@ -14,11 +17,13 @@ import com.brq.applojadecarros.model.ItemClickListener
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
+
 class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
     private var listaDeCarros: ArrayList<Car> = ArrayList()
     private lateinit var recyclerView: RecyclerView
-
+    private lateinit var edtPesquisa: EditText
+    private lateinit var adapter: CarListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +34,32 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
         CarListAdapter(this, listaDeCarros,this).let{
             recyclerView.adapter = it
+            adapter = it
         }
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        edtPesquisa.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,before: Int, count: Int) {
+                if(edtPesquisa.text.isNotEmpty() && edtPesquisa.text.isNotBlank()){
+                    atualizarLista(edtPesquisa.text.toString());
+                }else{
+                    adapter.atualizarLista(listaDeCarros)
+                }
+            }
+        })
+    }
+
+    private fun atualizarLista(text: String) {
+        var novalista: ArrayList<Car> =  ArrayList()
+        for (carro in listaDeCarros){
+            if(carro.nomeCarro.contains(text,true)){
+                novalista.add(carro)
+            }
+        }
+        adapter.atualizarLista(novalista)
     }
 
     private fun loadData() {
@@ -61,6 +90,7 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
 
     private fun loadComponents() {
         recyclerView = findViewById(R.id.rv_car_list)
+        edtPesquisa = findViewById(R.id.edtPesquisa)
     }
 
     override fun onClickItem(view: View?, index: Int) {
