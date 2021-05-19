@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.login_Activity">
+    tools:context=".activity.login_Activity"
+    android:background="#F6FAD0">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#184FD8"
+        android:background="@drawable/botao_customizado"
         android:clickable="false"
         android:fontFamily="sans-serif-black"
         android:freezesText="false"
