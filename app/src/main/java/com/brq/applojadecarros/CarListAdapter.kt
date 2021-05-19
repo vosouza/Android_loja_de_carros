@@ -29,7 +29,7 @@ class CarListAdapter(
         listaDeCarros[position].also {
             holder.txtNome.text = it.nomeCarro
             holder.txtDescricaoTipo.text = it.tipoCarro
-            holder.txtDescricao.text = it.descricao
+            holder.txtDescricao.text = it.descricao2
 
             //holder.srcImagem.setImageURI(it.Image)
             Glide.with(context).load(it.Image).into(holder.srcImagem)

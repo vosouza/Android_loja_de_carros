@@ -45,7 +45,7 @@ class Detalhes_Activity : AppCompatActivity(), ItemClickListener{
     private fun loadContent() {
         txtNome.text = carro.nomeCarro
         Glide.with(this).load(carro.Image).into(imgCarro)
-        txtDescricao1.text = resources.getString(R.string.carro1_desc1)
+        txtDescricao1.text = carro.descricao2
         txtDescricao2.text = carro.descricao
     }
 

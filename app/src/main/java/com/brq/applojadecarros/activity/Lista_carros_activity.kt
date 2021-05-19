@@ -48,7 +48,8 @@ class Lista_carros_activity : AppCompatActivity(), ItemClickListener {
                         document.get("NomeCarro").toString(),
                         document.get("ImagemURL").toString(),
                         document.get("Tipo").toString(),
-                        document.get("Descricao").toString()
+                        document.get("Descricao").toString(),
+                        document.get("Descricao2").toString()
                     )
                     listaDeCarros.add(carro)
                 }
